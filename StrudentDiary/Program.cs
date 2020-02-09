@@ -11,56 +11,26 @@ namespace StudentDiary
         static void Main(string[] args)
         {
             Diary diary = new Diary()  ;
-            //diary.AddRating(5);
-            //diary.AddRating(8.5f);
-            //diary.AddRating(4.7f);
+            diary.AddRating(5);
+            diary.AddRating(8.5f);
+            diary.AddRating(4.7f);
 
-            //float avg = diary.CalcualteAvarage();
-            //float max = diary.GetMaxRating();
-            //float min = diary.GetMinRating();
+            DiaryStatistics stats = diary.ComputeStatistics();
 
-            for (;;)
-            {
-                Console.WriteLine("Podaj ocenę z zakresu 1 - 10");
+            Console.WriteLine("Srednia wartość ocen: " +  stats.AvgarageGrade);
+            Console.WriteLine("Maksymalna wartosc: " + stats.MaxGrade);
+            Console.WriteLine("Minimalna wartosc: " + stats.MinGrade);
 
-                float rating;
-                    
-                bool result = float.TryParse(Console.ReadLine(), out rating);
+            Diary diary2 = new Diary();
+            diary2.AddRating(1);
+            diary2.AddRating(2);
+            diary2.AddRating(3);
 
-                //if (rating > 10)
-                //{
-                //    break;
-                //}
+            DiaryStatistics stats2 = diary2.ComputeStatistics();
 
-                if (result)
-                {
-                    if (rating >= 1 && rating <= 10)
-                    {
-                        diary.AddRating(rating);
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("Podana liczba jest spoza dopuszczalnego zakresu");
-                        break;
-                    }
-                }
-
-                else
-                {
-                    Console.WriteLine("Podana wartosc nie jest liczba");
-                }
-
-
-            }
-
-            Console.WriteLine("Srednia wprowadzony ocen to:" + diary.CalcualteAvarage());
-
-            Console.WriteLine("Maksymalna ocena to:" + diary.GetMaxRating());
-
-            Console.WriteLine("Minimalna ocena to:" + diary.GetMinRating());
-
-            Console.ReadKey();
+            Console.WriteLine("Srednia wartość ocen: " + stats2.AvgarageGrade);
+            Console.WriteLine("Maksymalna wartosc: " + stats2.MaxGrade);
+            Console.WriteLine("Minimalna wartosc: " + stats2.MinGrade);
         }
     }
 }
