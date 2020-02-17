@@ -12,7 +12,7 @@ namespace StudentDiary
         }
 
         // Stany (zmienne - pola)
-        List<float> ratings;
+        private List<float> ratings;
 
         //Zachowania
         /// <summary>

@@ -10,6 +10,7 @@ namespace StudentDiary
     {
         static void Main(string[] args)
         {
+
             Diary diary = new Diary()  ;
             diary.AddRating(5);
             diary.AddRating(8.5f);
@@ -31,6 +32,8 @@ namespace StudentDiary
             Console.WriteLine("Srednia wartość ocen: " + stats2.AvgarageGrade);
             Console.WriteLine("Maksymalna wartosc: " + stats2.MaxGrade);
             Console.WriteLine("Minimalna wartosc: " + stats2.MinGrade);
+
+            
         }
     }
 }
