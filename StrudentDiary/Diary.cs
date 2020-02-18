@@ -9,15 +9,12 @@ namespace StudentDiary
         public Diary()
         {
             ratings = new List<float>();
-            Count++;
         }
 
         // Stany (zmienne - pola)
         private List<float> ratings;
 
-        public static float MinxGrade = 0;
-        public static float MaxGrade = 0;
-        public static long Count = 0;
+        public string Name;
 
         //Zachowania
         /// <summary>
