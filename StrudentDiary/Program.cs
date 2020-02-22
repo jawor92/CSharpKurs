@@ -42,6 +42,13 @@ namespace StudentDiary
 
             Console.WriteLine(x2);
 
+            string name1 = "Mateusz";
+            string name2 = "mateusz";
+
+            bool comp = name1.Equals(name2);
+
+            Console.WriteLine(comp);
+
 
             //Diary diary = new Diary();
             //diary.AddRating(5);
