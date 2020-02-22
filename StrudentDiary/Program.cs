@@ -8,8 +8,40 @@ namespace StudentDiary
 {
     class Program
     {
+        static void GiveName(ref Diary diary)
+        {
+            diary = new Diary();
+            diary.Name = "Nowy Dzienniczek Marcina";
+        }
+
+        static void IncreamentNum(ref int number)
+        {
+            number += 1;
+        }
+
+        static int IncrementNum2(int number)
+        {
+            number += 1;
+            return number;
+        }
+
         static void Main(string[] args)
         {
+
+            Diary d1 = new Diary();
+            Diary d2 = d1;
+            GiveName(ref d2);
+            Console.WriteLine(d2.Name);
+
+            int x1 = 4;
+            IncreamentNum(ref x1);
+            Console.WriteLine(x1);
+
+            int x2 = 6;
+            x2 = IncrementNum2(x2);
+
+            Console.WriteLine(x2);
+
 
             //Diary diary = new Diary();
             //diary.AddRating(5);
@@ -41,14 +73,6 @@ namespace StudentDiary
             ///Console.WriteLine("Maksymalna wartosc: " + stats2.MaxGrade);
             ///Console.WriteLine("Minimalna wartosc: " + stats2.MinGrade);
 
-            Diary d1 = new Diary();
-            Diary d2 = d1;
-
-            d1 = new Diary();
-            d2 = d1;
-
-            d1.Name = "Dzienniczek Marcina 2";
-            Console.WriteLine(d2.Name);
 
 
         }
