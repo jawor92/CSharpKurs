@@ -39,20 +39,26 @@ namespace StudentDiary
         private static void Arrays()
         {
             float[] ratings;
-            ratings = new float[4];
-            ratings[0] = 3.4f;
-            ratings[1] = 4.1f;
-            ratings[2] = 10.4f;
-            ratings[3] = 1.5f;
+            ratings = new float[3];
+
+            AddRatings(ratings);
 
             foreach (var rating in ratings)
             {
                 Console.WriteLine(rating);
             }
 
+        }
 
-
-
+        private static void AddRatings(float[] ratings)
+        {
+            if (ratings.Length >= 4)
+            {
+                ratings[0] = 3.4f;
+                ratings[1] = 4.1f;
+                ratings[2] = 10.4f;
+                ratings[3] = 1.5f;
+            }
         }
 
         private static void Immutable()
