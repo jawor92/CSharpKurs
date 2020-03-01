@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentDiary", "StrudentDia
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructors", "Constructors\Constructors.csproj", "{60C18F2F-6551-4570-BB10-B5BC72C50E5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class-variable - theory", "Class-variable - theory\Class-variable - theory.csproj", "{620A974A-4435-4805-9C8D-5CDD59D5DAE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Class-variable - theory", "Class-variable - theory\Class-variable - theory.csproj", "{620A974A-4435-4805-9C8D-5CDD59D5DAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentDiary.Tests", "StudentDiary.Tests\StudentDiary.Tests.csproj", "{1FBF8881-9041-45AA-8B85-E4C32BA4CF77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{620A974A-4435-4805-9C8D-5CDD59D5DAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{620A974A-4435-4805-9C8D-5CDD59D5DAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{620A974A-4435-4805-9C8D-5CDD59D5DAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FBF8881-9041-45AA-8B85-E4C32BA4CF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FBF8881-9041-45AA-8B85-E4C32BA4CF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FBF8881-9041-45AA-8B85-E4C32BA4CF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FBF8881-9041-45AA-8B85-E4C32BA4CF77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

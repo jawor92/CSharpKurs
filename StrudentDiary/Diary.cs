@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace StudentDiary
 {
-    class Diary
+    public class Diary
     {
         public Diary()
         {
@@ -15,6 +15,7 @@ namespace StudentDiary
         private List<float> ratings;
 
         public string Name;
+        public DiaryStatistics com;
 
         //Zachowania
         /// <summary>
@@ -28,7 +29,7 @@ namespace StudentDiary
         /// Statistics: avg, max, min ratings
         /// </summary>
         /// <returns></returns>
-        internal DiaryStatistics ComputeStatistics()
+        public DiaryStatistics ComputeStatistics()
         {
             DiaryStatistics stats = new DiaryStatistics();
 
