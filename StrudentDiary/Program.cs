@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Speech.Synthesis;
 
 namespace StudentDiary
 {
@@ -32,14 +33,20 @@ namespace StudentDiary
             ///Immutable();
 
             Arrays();
-            
+
+            SpeechSynthesizer synt = new SpeechSynthesizer();
+
+            synt.Speak("Czesc");
+
+            Console.ReadKey();
+
 
         }
 
         private static void Arrays()
         {
             float[] ratings;
-            ratings = new float[3];
+            ratings = new float[4];
 
             AddRatings(ratings);
 
@@ -52,7 +59,7 @@ namespace StudentDiary
 
         private static void AddRatings(float[] ratings)
         {
-            if (ratings.Length >= 4)
+            if (ratings.Length <= 4)
             {
                 ratings[0] = 3.4f;
                 ratings[1] = 4.1f;
@@ -60,6 +67,8 @@ namespace StudentDiary
                 ratings[3] = 1.5f;
             }
         }
+
+        
 
         private static void Immutable()
         {
