@@ -9,12 +9,12 @@ namespace Members
         {
             Diary diary = new Diary();
 
-            diary.NameChanged += new NamedChangedDelagte(OnNameChanged);
-            diary.NameChanged += new NamedChangedDelagte(OnNameChanged2);
-            diary.NameChanged += new NamedChangedDelagte(OnNameChanged3);
-            diary.NameChanged += new NamedChangedDelagte(OnNameChanged4);
-            diary.NameChanged += new NamedChangedDelagte(OnNameChanged4);
-            diary.NameChanged += new NamedChangedDelagte(OnNameChanged4);
+            diary.NameChanged += OnNameChanged;
+            diary.NameChanged += OnNameChanged2;
+            diary.NameChanged += OnNameChanged3;
+            diary.NameChanged += OnNameChanged4;
+            diary.NameChanged += OnNameChanged4;
+            diary.NameChanged += OnNameChanged4;
 
             diary.Name = "Dziennik Mateusz";
             diary.Name = "Dziennik Doroty";
@@ -23,22 +23,22 @@ namespace Members
             Console.WriteLine(diary.Name);
         }
 
-        private static void OnNameChanged(string existingName, string newName)
+        private static void OnNameChanged(object sender, NamedChangedEventArgs args)
         {
-            Console.WriteLine($"Zmiana nazwy z {existingName} na {newName}");
+            Console.WriteLine($"Zmiana nazwy z {args.ExistingName} na {args.NewName}");
         }
 
-        private static void OnNameChanged2(string existingName, string newName)
+        private static void OnNameChanged2(object sender, NamedChangedEventArgs argse)
         {
             Console.WriteLine("*****************");
         }
 
-        private static void OnNameChanged3(string existingName, string newName)
+        private static void OnNameChanged3(object sender, NamedChangedEventArgs argse)
         {
             Console.WriteLine("++++++++++++++++++");
         }
 
-        private static void OnNameChanged4(string existingName, string newName)
+        private static void OnNameChanged4(object sender, NamedChangedEventArgs argse)
         {
             Console.WriteLine("----------------");
         }
