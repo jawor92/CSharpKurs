@@ -6,8 +6,39 @@ namespace FlowControl
     {
         private static int age;
         private static string name;
+        private static string number;
 
         static void Main(string[] args)
+        {
+            //InstructionIf();
+
+            Console.WriteLine("Insert value");
+            number = Console.ReadLine();
+
+
+            switch (number)
+            {
+                case "1":
+                    Method1();
+                    break;
+
+                case "2":
+                    Method2();
+                    break;
+
+                case "3":
+                    Method3();
+                    break;
+
+                default:
+                    Method4();
+                    break;
+            }
+
+            Console.ReadKey();
+        }
+
+        private static void InstructionIf()
         {
             //Console.WriteLine("Podaj swoj wiek");
             //age = int.Parse(Console.ReadLine());
@@ -45,8 +76,6 @@ namespace FlowControl
             {
                 Method4();
             }
-
-            Console.ReadKey();
         }
 
         private static void Method4()
