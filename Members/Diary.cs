@@ -21,23 +21,26 @@ namespace Members
             get
             {
                 return _name.ToUpper();
-            } 
+            }
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
-                    if (_name != value)
-                    {
-                        NamedChangedEventArgs args = new NamedChangedEventArgs();
-
-                        args.ExistingName = _name;
-                        args.NewName = value;
-
-                        NameChanged(this, args);
-                    }
-
-                    _name = value;
+                    throw new ArgumentNullException("Name can't be empty or set as a NULL");
                 }
+
+                if (_name != value)
+                {
+                    NamedChangedEventArgs args = new NamedChangedEventArgs();
+
+                    args.ExistingName = _name;
+                    args.NewName = value;
+
+                    NameChanged(this, args);
+                }
+
+                _name = value;
+
             }
         }
 
