@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.IO;
 
 namespace Members
 {
@@ -7,43 +8,62 @@ namespace Members
     {
         static void Main(string[] args)
         {
-            Diary diary = new Diary();
+            #region OldCode
+            //Diary diary = new Diary();
 
+            //try
+            //{
+            //    Console.WriteLine("Podaj imie");
+            //    diary.Name = Console.ReadLine();
+            //}
+
+            //catch (ArgumentException ex)
+            //{
+
+            //    Console.WriteLine(ex.Message);
+            //}
+            //catch (NullReferenceException)
+            //{
+            //    Console.WriteLine("Something went wrong");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+
+
+            //diary.NameChanged += OnNameChanged;
+            //diary.NameChanged += OnNameChanged2;
+            //diary.NameChanged += OnNameChanged3;
+            //diary.NameChanged += OnNameChanged4;
+            //diary.NameChanged += OnNameChanged4;
+            //diary.NameChanged += OnNameChanged4;
+
+            //diary.Name = "Dziennik Mateusz";
+            //diary.Name = "Dziennik Doroty";
+            //diary.Name = "Dziennik X";
+
+            //Console.WriteLine(diary.Name);
+            #endregion
+
+            StreamWriter file = new StreamWriter("TextFile.txt");
             try
             {
-                Console.WriteLine("Podaj imie");
-                diary.Name = Console.ReadLine();
+                Console.WriteLine("Type your name");
+                string typedName = Console.ReadLine();
+                file.WriteLine(typedName);
             }
-
-            catch (ArgumentException ex)
+            finally
             {
-
-                Console.WriteLine(ex.Message);
+                file.Close();
             }
-            catch (NullReferenceException)
+
+            using (StreamWriter file2 = new StreamWriter("TextFile.txt", true))
             {
-                Console.WriteLine("Something went wrong");
+                file2.WriteLine("Hello. Write to text file!");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-
-            diary.NameChanged += OnNameChanged;
-            diary.NameChanged += OnNameChanged2;
-            diary.NameChanged += OnNameChanged3;
-            diary.NameChanged += OnNameChanged4;
-            diary.NameChanged += OnNameChanged4;
-            diary.NameChanged += OnNameChanged4;
-
-            diary.Name = "Dziennik Mateusz";
-            diary.Name = "Dziennik Doroty";
-            diary.Name = "Dziennik X";
-
-            Console.WriteLine(diary.Name);
         }
-
+        #region PrivateMethods
         private static void OnNameChanged(object sender, NamedChangedEventArgs args)
         {
             Console.WriteLine($"Zmiana nazwy z {args.ExistingName} na {args.NewName}");
@@ -63,6 +83,7 @@ namespace Members
         {
             Console.WriteLine("----------------");
         }
+        #endregion
     }
 }
  
