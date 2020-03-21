@@ -8,7 +8,27 @@ namespace Members
         static void Main(string[] args)
         {
             Diary diary = new Diary();
-            diary.Name = "Mateusz";
+
+            try
+            {
+                Console.WriteLine("Podaj imie");
+                diary.Name = Console.ReadLine();
+            }
+
+            catch (ArgumentException ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Something went wrong");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
 
             diary.NameChanged += OnNameChanged;
             diary.NameChanged += OnNameChanged2;

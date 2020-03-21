@@ -29,7 +29,7 @@ namespace Members
                     throw new ArgumentNullException("Name can't be empty or set as a NULL");
                 }
 
-                if (_name != value)
+                if (_name != value && NameChanged != null)
                 {
                     NamedChangedEventArgs args = new NamedChangedEventArgs();
 
